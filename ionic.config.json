@@ -1,0 +1,7 @@
+{
+  "name": "FuzzySpin",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
