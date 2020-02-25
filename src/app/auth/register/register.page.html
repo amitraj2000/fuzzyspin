@@ -1,0 +1,51 @@
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div id="container">
+    <form #form="ngForm" (ngSubmit)="login(form)">
+      <ion-grid>
+        <ion-row color="primary" justify-content-center>
+          <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+            <div class="logo" text-center>
+              <ion-text color="secondary">
+                <h3>FUZZY</h3>
+              </ion-text>
+            </div>
+            <div padding>
+              <ion-item>
+                <ion-icon name="contact"></ion-icon>&nbsp;
+                <ion-input name="name" type="email" placeholder="Name" ngModel required></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-icon name="mail"></ion-icon>&nbsp;
+                <ion-input name="email" type="email" placeholder="Email" ngModel required></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-icon name="lock-closed"></ion-icon>&nbsp;
+                <ion-input type="password" *ngIf="!showPasswordText" placeholder="Password" ngModel required></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-text>
+                  Password must contain at least 8 characters, including at least 1 digit and one uppercase letter
+                </ion-text>
+              </ion-item>
+            </div>
+            <div>
+              <ion-button outline round size="large" type="submit" [disabled]="form.invalid" expand="block">
+                <!-- <button ion-button block outline> -->
+                <ion-text size="small">
+                  SIGN UP
+                </ion-text>
+                <!-- </button> -->
+              </ion-button>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-text text-center>
+            Already have an account <a routerLink='/login'>
+              Login</a>
+            </ion-text>
+        </ion-row>
+      </ion-grid>
+    </form>
+  </div>
+</ion-content>
