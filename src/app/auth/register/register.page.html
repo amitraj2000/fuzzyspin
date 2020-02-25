@@ -11,7 +11,7 @@
             </div>
             <div padding>
               <ion-item>
-                <ion-icon name="contact"></ion-icon>&nbsp;
+                <ion-icon name="person"></ion-icon>&nbsp;
                 <ion-input name="name" type="email" placeholder="Name" ngModel required></ion-input>
               </ion-item>
               <ion-item>
@@ -20,31 +20,37 @@
               </ion-item>
               <ion-item>
                 <ion-icon name="lock-closed"></ion-icon>&nbsp;
-                <ion-input type="password" *ngIf="!showPasswordText" placeholder="Password" ngModel required></ion-input>
+                <ion-input name="password" type="password" *ngIf="!showPasswordText" placeholder="Password" ngModel
+                  required>
+                </ion-input>
               </ion-item>
-              <ion-item>
-                <ion-text>
+              <div class="ion-margin ion-text-start">
+                <ion-text color="light">
                   Password must contain at least 8 characters, including at least 1 digit and one uppercase letter
                 </ion-text>
-              </ion-item>
+              </div>
             </div>
             <div>
               <ion-button outline round size="large" type="submit" [disabled]="form.invalid" expand="block">
-                <!-- <button ion-button block outline> -->
                 <ion-text size="small">
                   SIGN UP
                 </ion-text>
-                <!-- </button> -->
               </ion-button>
             </div>
           </ion-col>
         </ion-row>
-        <ion-row>
-          <ion-text text-center>
-            Already have an account <a routerLink='/login'>
+        <div class="ion-margin">
+          <ion-text color="light">
+            By signing up you agree with <a [routerLink]="['/terms']">Terms of Use</a> and <a [routerLink]="['/policy']">Privacy
+              Policy</a>
+          </ion-text>
+        </div>
+        <div class="ion-margin">
+          <ion-text color="light">
+            Already have an account <a [routerLink]="['/login']">
               Login</a>
-            </ion-text>
-        </ion-row>
+          </ion-text>
+        </div>
       </ion-grid>
     </form>
   </div>
