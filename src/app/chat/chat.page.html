@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>chat</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  This is content area
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <ion-item>
+    <ion-textarea auto-grow="true" autofocus="true"
+      placeholder="Enter a message"
+      [(ngModel)]="chatText"
+      (value)=chatText></ion-textarea>
+    <ion-button (click)=sendMessage()>
+      <ion-icon slot="icon-only" name="send"></ion-icon>
+    </ion-button>
+  </ion-item>
+</ion-footer>

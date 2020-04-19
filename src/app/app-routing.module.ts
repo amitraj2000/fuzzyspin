@@ -10,7 +10,15 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./auth/login/login.module').then( m => m.LoginPageModule)
+  },  {
+    path: 'policy',
+    loadChildren: () => import('./auth/policy/policy.module').then( m => m.PolicyPageModule)
   },
+  {
+    path: 'chat',
+    loadChildren: () => import('./chat/chat.module').then( m => m.ChatPageModule)
+  },
+
 ];
 
 @NgModule({
